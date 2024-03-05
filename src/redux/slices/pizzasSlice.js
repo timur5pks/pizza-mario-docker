@@ -6,7 +6,7 @@ export const fetchPizzas = createAsyncThunk('pizzas/fetchPizzas', async (_, { ge
   const activeSortCategory = getState().searchParams.activeSortCategory.value;
   const activeFilterCategory = getState().searchParams.activeFilterCategory;
   const { data } = await axios.get(
-    `http://85.159.231.53:80/pizzas?sortBy=${activeSortCategory}&page=${currentPage}${
+    `http://85.159.231.53:8080/pizzas?sortBy=${activeSortCategory}&page=${currentPage}${
       activeFilterCategory === 'Все' ? '' : `&filterBy=${activeFilterCategory}`
     }`,
   );
